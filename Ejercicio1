@@ -1,0 +1,67 @@
+import java.util.Scanner;
+
+
+public class Ejercicio1 {
+
+    public static void main(String[] args) {
+
+        Scanner n = new Scanner(System.in);
+        int digi = 0;
+
+        // Crea un array de números.
+        System.out.println("Ingrese cantidad de espacios de los cuales se va a componer el array "+"\n" );
+        digi = n.nextInt();
+
+        System.out.print("\n");
+
+        if (digi < 0 || digi > 100) {
+
+            System.out.println("el numero ingresado es incorrecto");
+
+        } else {
+
+            // Llenado de array.
+            int nums[] = new int[digi];
+            for (int i = 0; i < nums.length; i++) {
+                nums[i] = (int) (Math.random() * 100);
+                System.out.print("[" + nums[i] + "]" + "," );
+            }
+
+            System.out.println("\n");
+
+            //Muestra el array de forma inversa
+            for (int i = nums.length - 1; i >= 0; i--) {
+                System.out.println("[" + nums[i] + "]");
+                System.out.println();
+            }
+
+            
+
+            // Itera sobre cada número en el array.
+            for (int i = 0; i < nums.length; i++) {
+                int num = nums[i];
+
+                // Crea una nueva cadena para el número modificado.
+                String newNumStr = "";
+
+                // Itera sobre cada dígito en el número.
+                for (int j = 0; j < String.valueOf(num).length(); j++) {
+
+                    // Obtén el dígito actual.
+                    char digito = String.valueOf(num).charAt(j);
+
+                    // Reemplaza el dígito si es igual al dígito que se eliminará.
+                    if (Character.getNumericValue(digito) >= 8) {
+                        digito = ' ';
+                    }
+
+                    // Agrega el dígito a la nueva cadena.
+                    newNumStr += digito;
+                }
+
+                // Imprime el número modificado.
+                System.out.print("[" + newNumStr + "]" + ",");
+            }
+        }
+    }
+}
