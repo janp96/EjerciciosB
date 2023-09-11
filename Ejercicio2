@@ -17,29 +17,38 @@ public class Ejercicio2 {
 
         int num[] = new int[num_ma];
 
-        
         //Ingresa los numeros al array de forma aleatoria o manual
         System.out.println("ingrese los numeros");
         for (int i = 0; i < num.length; i++) {
             //num[i] = (int) (Math.random() * 30);
             num[i] = sc.nextInt();
-            
-            //System.out.println(num[i]);
 
+            //System.out.println(num[i]);
         }
         //organiza el array de menor a mayor
-        //System.out.println(num);
+        System.out.println();
         Arrays.sort(num);
+        
+        // imprime el array en orden
+        System.out.println("Los numeros del array en orden son: ");
+        for (int i = 0;i < num_ma; i++){
+            System.out.print("[" + num[i] + "]");
+        }
+        
+        System.out.println("\n");
         
 
         //eleva lo valores al cuadrado e imprime los valores menores a 88
-       
+        System.out.println("Los numeros al caudrado del array son: ");
         for (int i = 0; i < num.length; i++) {
             num[i] = (int) Math.pow(num[i], 2);
             if (num[i] <= 88) {
-                System.out.println(num[i]);
+                System.out.print("[" + num[i] + "]");
             }
+
         }
+        
+        System.out.println();
 
     }
 }
