@@ -1,0 +1,45 @@
+package ejercicio_banco;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Ejercicio2 {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int num_ma;
+
+        //
+        System.out.println("Ingrese la cantidad de numeros para la matriz");
+        num_ma = sc.nextInt();
+        System.out.println();
+
+        int num[] = new int[num_ma];
+
+        
+        //Ingresa los numeros al array de forma aleatoria o manual
+        System.out.println("ingrese los numeros");
+        for (int i = 0; i < num.length; i++) {
+            //num[i] = (int) (Math.random() * 30);
+            num[i] = sc.nextInt();
+            
+            //System.out.println(num[i]);
+
+        }
+        //organiza el array de menor a mayor
+        //System.out.println(num);
+        Arrays.sort(num);
+        
+
+        //eleva lo valores al cuadrado e imprime los valores menores a 88
+       
+        for (int i = 0; i < num.length; i++) {
+            num[i] = (int) Math.pow(num[i], 2);
+            if (num[i] <= 88) {
+                System.out.println(num[i]);
+            }
+        }
+
+    }
+}
